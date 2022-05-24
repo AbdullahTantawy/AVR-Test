@@ -8,10 +8,12 @@
 
 u8 Local_u8_Qnum =1;
 u8 Local_u8_Min = 0;
+u8 Local_u8_Sec = 0;
+u8 Local_u8_Hour = 0;
 
 void A_Asking(void)
 {
-	H_Lcd_ClockDisplay(0,Local_u8_Min,0);
+	H_Lcd_ClockDisplay(Local_u8_Hour,Local_u8_Min,Local_u8_Sec);
 	u8 Local_u8_Answer = 1;
 	H_Lcd_GoTo(0,0);
 	H_Lcd_WriteStr("Q");
@@ -92,4 +94,19 @@ void A_WrongAnswer(void)
 	_delay_ms(1000);
 	H_Lcd_Clr();
 	A_Asking();
+}
+
+void A_manage_time(void)
+{
+	
+	if (Local_u8_Sec < 59 )
+	{
+		Local_u8_Sec++;
+	}
+	else
+	{
+		Local_u8_Sec =0;
+		Local_u8_Min++;
+	}
+	H_Lcd_ClockDisplay(Local_u8_Hour,Local_u8_Min,Local_u8_Sec);
 }

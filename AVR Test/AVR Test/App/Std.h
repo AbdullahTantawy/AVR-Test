@@ -21,7 +21,7 @@ typedef signed   long				s32;
 typedef          float				f32;
 typedef          double				f64;
 
-
+#define NULL					(void *)0
 
 
 #endif /* STD_H_ */

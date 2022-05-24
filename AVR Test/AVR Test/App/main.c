@@ -14,7 +14,8 @@
 #include "Pushbutton.h"
 #include "Lcd.h"
 #include "Puzzer.h"
-
+#include "Timer_interface.h"
+#include "App.h"
 
 int main(void)
 {
@@ -25,20 +26,24 @@ int main(void)
 	H_PushButton_Init(PUSHBUTTON_2);
 	H_PushButton_Init(PUSHBUTTON_3);
 	H_PushButton_Init(PUSHBUTTON_4);
-	 
+	Setbit(SREG,7);
+	M_Timer0_vIntEnable(TIMER0_OVF_INT_ID);
+	M_Timer0_vSetCallBack(A_manage_time , TIMER0_OVF_INT_ID);
+	
 	H_Lcd_GoTo(0,1);
 	H_Lcd_WriteStr("Welcome ");
-	_delay_ms(3000);
+	_delay_ms(2000);
 	H_Lcd_Clr();
 	H_Lcd_GoTo(0,3);
 	H_Lcd_WriteStr("Start Game");
-	_delay_ms(3000);
+	_delay_ms(2000);
 	H_Lcd_Clr();
+	M_Timer0_vStart();
 	
 	for (i=0;i<5;i++)
 	{
 		A_Asking();
-        
+		
 	}
 	H_Lcd_GoTo(1,0);
 	H_Lcd_WriteStr("Congratulations ");
@@ -48,4 +53,6 @@ int main(void)
 	}
 	return 0;
 }
+
+
 

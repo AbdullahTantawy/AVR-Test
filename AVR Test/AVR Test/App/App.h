@@ -26,6 +26,7 @@ void A_Asking(void);
 void A_CheckAnswer(u8 Local_u8_Answer);
 void A_RightAnswer(void);
 void A_WrongAnswer(void);
+void A_manage_time(void);
 
 
 

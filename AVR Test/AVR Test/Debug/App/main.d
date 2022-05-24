@@ -8,7 +8,8 @@ App/main.d App/main.o: ../App/main.c \
  ../Hal/LED/Led.h ../Hal/LED/LedCfg.h ../App/Std.h \
  ../Hal/PushButton/Pushbutton.h ../Mcal/DIO/Dio.h ../App/BitMath.h \
  ../Mcal/Reg.h ../Hal/PushButton/PushbuttonCfg.h ../Hal/LCD/Lcd.h \
- ../Hal/LCD/LcdCfg.h ../Hal/Buzzer/Puzzer.h ../Hal/Buzzer/PuzzerCfg.h
+ ../Hal/LCD/LcdCfg.h ../Hal/Buzzer/Puzzer.h ../Hal/Buzzer/PuzzerCfg.h \
+ ../Mcal/Timer0/Timer_interface.h ../App/App.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h:
 
@@ -45,3 +46,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../Hal/Buzzer/Puzzer.h:
 
 ../Hal/Buzzer/PuzzerCfg.h:
+
+../Mcal/Timer0/Timer_interface.h:
+
+../App/App.h:
